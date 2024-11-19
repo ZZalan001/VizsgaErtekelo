@@ -9,12 +9,12 @@ namespace VizsgaErtekelo.Models
 {
     internal class Kidolgozos : IOsztalyozhato
     {
-        public int Osztalyzat()
+        public int Osztalyzat(string[] valaszok)
         {
             throw new NotImplementedException();
         }
 
-        public bool Sikeres()
+        public bool Sikeres(string[] valaszok)
         {
             throw new NotImplementedException();
         }

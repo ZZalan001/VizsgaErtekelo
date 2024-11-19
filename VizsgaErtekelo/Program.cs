@@ -22,6 +22,16 @@ namespace VizsgaErtekelo
             { 
                 Console.WriteLine("A beolvasás nem sikerült!"); 
             }
+            FeltoltFeladatok("teszt1.txt",1);
+            string[] valasz1 = { "a", "b", "c", "a", "b", "c", "a", "b", "c", "a" };
+            if (tesztek[0].Sikeres(valasz1))
+            {
+                Console.WriteLine("Sikeres vizsga!");
+            }
+            else
+            {
+                Console.WriteLine("Sikertelen vizsga!");
+            }
 
             Console.ReadLine();
         }
@@ -52,6 +62,33 @@ namespace VizsgaErtekelo
                 return -1;
             }
             
+        }
+
+        static void FeltoltFeladatok(string fileName, int id)
+        {
+            int index = 0;
+            while (index < tesztek.Count && !(tesztek[index].Id == id))
+            {
+                index++;
+            }
+            if (index < tesztek.Count)
+            {
+                string[] sorok = File.ReadAllLines(fileName);
+                for (global::System.Int32 i = 0; i < sorok.Length; i++)
+                {
+                    tesztek[index].Feladatok[i] = new Feladat()
+                    {
+                        Megoldas = sorok[i].Split(';')[0],
+                        Pontertek = int.Parse(sorok[i].Split(';')[1])
+                    };
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nincs megfelelő azonosítójú teszt!");
+            }
+            
+
         }
     }
 }

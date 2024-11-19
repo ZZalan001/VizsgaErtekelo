@@ -8,7 +8,7 @@ namespace VizsgaErtekelo.Interfaces
 {
     internal interface IOsztalyozhato
     {
-        bool Sikeres();
-        int Osztalyzat();
+        bool Sikeres(string[] valaszok);
+        int Osztalyzat(string[] valaszok);
     }
 }

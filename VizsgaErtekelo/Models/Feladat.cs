@@ -9,7 +9,6 @@ namespace VizsgaErtekelo.Models
     internal class Feladat
     {
         public string Megoldas { get; set; }
-        public string Valasz { get; set; }
         public int Pontertek { get; set; }
     }
 }
