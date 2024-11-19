@@ -26,7 +26,8 @@ namespace VizsgaErtekelo
             string[] valasz1 = { "a", "b", "c", "a", "b", "c", "a", "b", "c", "a" };
             if (tesztek[0].Sikeres(valasz1))
             {
-                Console.WriteLine("Sikeres vizsga!");
+                Console.WriteLine($"Sikeres vizsga!\nÉrdemjegy: {tesztek[0].Osztalyzat(valasz1)}");
+                Console.WriteLine();
             }
             else
             {

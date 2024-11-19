@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +48,39 @@ namespace VizsgaErtekelo.Models
 
         public int Osztalyzat(string[] valaszok)
         {
-            throw new NotImplementedException();
+            Hatar = 30.0;
+            int osztalyzat = 0;
+
+            int osszpont = 0;
+            for (int i = 0; i < valaszok.Length; i++)
+            {
+                if (valaszok[i] == Feladatok[i].Megoldas)
+                {
+                    osszpont += Feladatok[i].Pontertek;
+                }
+            }
+
+            if (osszpont >= Hatar * 0.8)
+            {
+                osztalyzat = 5;
+            }
+            else if(osszpont >= Hatar * 0.6 && osszpont < Hatar * 0.8)
+            {
+                osztalyzat = 4;
+            }
+            else if (osszpont >= Hatar * 0.4 && osszpont < Hatar * 0.6)
+            {
+                osztalyzat = 3;
+            }
+            else if (osszpont >= Hatar * 0.2 && osszpont < Hatar * 0.4)
+            {
+                osztalyzat = 2;
+            }
+            else 
+            {
+                osztalyzat = 1;
+            }
+            return osztalyzat;
         }
     }
 }
