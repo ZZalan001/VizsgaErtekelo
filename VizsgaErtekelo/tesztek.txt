@@ -1,0 +1,3 @@
+﻿1;Záróvizsga teszt 2024;30;10
+2;Gyakorló teszt 1;52;12
+3;Gyakorló teszt 2;40;8
